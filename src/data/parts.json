@@ -1,0 +1,51 @@
+{
+  "partsOptionsData": [{
+      "id": "adj",
+      "name": "adj 形容詞"
+    },
+    {
+      "id": "adv",
+      "name": "adv 副詞"
+    },
+    {
+      "id": "conj",
+      "name": "conj 連接詞"
+    },
+    {
+      "id": "n",
+      "name": "n 名詞"
+    },
+    {
+      "id": "num",
+      "name": "num 數詞"
+    },
+    {
+      "id": "phrase",
+      "name": "phrase 片語"
+    },
+    {
+      "id": "prep",
+      "name": "prep 介系詞"
+    },
+    {
+      "id": "pron",
+      "name": "pron 代名詞"
+    },
+    {
+      "id": "v",
+      "name": "v 動詞"
+    },
+    {
+      "id": "vi",
+      "name": "vi 不及物動詞"
+    },
+    {
+      "id": "vt",
+      "name": "vt 及物動詞"
+    },
+    {
+      "id": "all",
+      "name": "全部類別"
+    }
+  ]
+}

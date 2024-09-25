@@ -1,0 +1,67 @@
+{
+  "name": "words-up",
+  "version": "1.2.1",
+  "private": true,
+  "author": "waveciou <waveciou@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:export": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waveciou/WordsUp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/waveciou/WordsUp/issues"
+  },
+  "homepage": "https://github.com/waveciou/WordsUp#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
+    "dayjs": "^1.10.7",
+    "idb-keyval": "^6.2.1",
+    "next": "11.0.1",
+    "next-pwa": "^5.6.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "react-speech-kit": "^3.0.1",
+    "react-transition-group": "^4.4.2",
+    "redux": "^4.1.1",
+    "swiper": "6.8.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.13",
+    "@types/react": "18.0.1",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-transition-group": "^4.4.2",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "autoprefixer": "^10.4.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.4.12",
+    "sass": "^1.49.9",
+    "stylelint": "^14.6.0",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-selector-bem-pattern": "^2.1.1",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^4.3.5"
+  }
+}

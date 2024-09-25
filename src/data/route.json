@@ -1,0 +1,33 @@
+{
+  "route": [{
+      "id": "home",
+      "name": "今日單字",
+      "path": "/"
+    },
+    {
+      "id": "quiz",
+      "name": "單字測驗",
+      "path": "/quiz"
+    },
+    {
+      "id": "collection",
+      "name": "單字列表",
+      "path": "/collection"
+    },
+    {
+      "id": "favorite",
+      "name": "收藏單字",
+      "path": "/favorite"
+    },
+    {
+      "id": "record",
+      "name": "測驗紀錄",
+      "path": "/record"
+    },
+    {
+      "id": "info",
+      "name": "更多資訊",
+      "path": "/info"
+    }
+  ]
+}

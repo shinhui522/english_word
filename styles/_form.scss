@@ -1,0 +1,45 @@
+/* stylelint-disable function-no-unknown */
+@charset 'UTF-8';
+@import '@/Styles/utils/_utils.scss';
+
+$select--padding-tb: 9px;
+$select--padding-lr: 11px;
+$select--line-height: 20px;
+
+$checkbox--icon-size: 16px;
+
+// * Select
+
+.element-select {
+  min-width: 140px;
+  display: block;
+  position: relative;
+  background-color: $color-white;
+  border: 1px $color-gray-light solid;
+  border-radius: 8px;
+
+  > select {
+    width: 100%;
+    padding: $select--padding-tb $select--padding-lr;
+    padding-right: $select--line-height + $select--padding-lr;
+    line-height: $select--line-height;
+    font-size: map-get($font-size, xxs);
+    appearance: none;
+    cursor: pointer;
+  }
+
+  &::after {
+    @include font-material;
+
+    content: '\e5cf';
+    width: $select--line-height;
+    height: $select--line-height;
+    display: block;
+    position: absolute;
+    top: $select--padding-tb;
+    right: $select--padding-lr;
+    text-align: center;
+    line-height: $select--line-height;
+    pointer-events: none;
+  }
+}

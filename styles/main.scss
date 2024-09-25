@@ -1,0 +1,48 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+@charset 'UTF-8';
+@import '@/Styles/utils/_utils.scss';
+@import '@/Styles/_font.scss';
+@import '@/Styles/_reset.scss';
+@import '@/Styles/_content.scss';
+@import '@/Styles/_animate.scss';
+@import '@/Styles/_form.scss';
+@import '@/Styles/_menu.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.before-font-material::before,
+.after-font-material::after {
+  @include font-material;
+}
+
+.before-font-awesome::before,
+.after-font-awesome::after {
+  @include font-awesome;
+}
+
+// Column
+
+.column-item {
+  @media (min-width: 768px) {
+    width: calc((100% - 0.75rem)/2);
+    margin-right: 0.75rem;
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    width: calc((100% - 1.5rem)/3);
+
+    &:nth-child(even) {
+      margin-right: 0.75rem;
+    }
+
+    &:nth-child(3n + 3) {
+      margin-right: 0;
+    }
+  }
+}
