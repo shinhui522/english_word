@@ -4,7 +4,7 @@ interface IWordItem {
   zh: string[];
   parts: string[];
   alphabet: string;
-  examlple: string[];
+  example: string[];
 }
 
 interface IDailyCase {
