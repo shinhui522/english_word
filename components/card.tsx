@@ -21,7 +21,7 @@ const Card: React.FC<ICardProps> = ({ wordItem }) => {
   const [isShow, setIsShow] = useState<boolean>(false);
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
-  const { id, en, zh, parts } = wordItem;
+  const { id, en, zh, parts, example } = wordItem;
 
   const handleSetFavorite = (
     e: React.MouseEvent<HTMLDivElement | HTMLButtonElement>
