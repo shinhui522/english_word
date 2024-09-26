@@ -53,6 +53,7 @@ const useSetDailyCase = () => {
         const startIndex = (diffDays * 10) % totalWords; // 計算起始索引並處理超出範圍
         const endIndex = (startIndex + 10) % totalWords; // 計算結束索引並處理超出範圍
   
+        const result: IDailyCase = { date: dateId, words: [] };
         if (totalWords > 0) {
           if (endIndex > startIndex) {
             // 確保在不需要從頭開始的情況下
@@ -68,6 +69,7 @@ const useSetDailyCase = () => {
           }
         }
       }
+      console.log(result);
 
       return result;
     },
