@@ -56,6 +56,8 @@ const DailyWords: React.FC<IDailyWordsProps> = ({
     }
   }, [isShowGuideButton]);
 
+  
+
   // The solution for install swiper issues.
   // https://github.com/nolimits4web/swiper/issues/3855
 
@@ -87,12 +89,12 @@ const DailyWords: React.FC<IDailyWordsProps> = ({
           onSlideChange={({ realIndex }) => setSwipeIndex(realIndex)}
           onBeforeInit={(swipper) => setSwipe(swipper)}
         >
-          {wordItemList?.map(({ id, en, zh, parts, example }: IWordItem) => (
+          {wordItemList?.map(({ id, tag, en, zh, parts, example }: IWordItem) => (
             <SwiperSlide key={uuidv4()}>
               <div className="w-full h-full tablet:p-1">
                 <div className="w-full h-full py-16 px-6 flex justify-center items-center rounded-lg tablet:shadow-[0_1px_3px_0_rgba(51,51,51,0.4)] bg-white">
                   <div className="w-full">
-                    <div className="text-xl text-center leading-relaxed text-wine break-all mb-2.5">
+                    <div className="text-xl text-center leading-relaxed text-wine break-all mb-2.5 mt-2">
                       {en}
                     </div>
                     <div className="leading-8 text-xs mini:text-sm">
@@ -146,6 +148,11 @@ const DailyWords: React.FC<IDailyWordsProps> = ({
                         }
                       }}
                     />
+                    <div className="absolute left-14 top-3 z-50">
+                      <span className="text-brown/80 text-xs font-bold bg-cyan rounded-full whitespace-pre-line py-2 px-4">
+                      {wordItemList.length > 0 ? wordItemList[swipeIndex].tag : '沒有標籤'} {/* 如果沒有標籤則顯示提示 */}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

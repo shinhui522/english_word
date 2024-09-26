@@ -18,11 +18,11 @@ const makeApiCall = (sheetId: string) => {
 
         const wordItemList: IWordItem[] = sheetRowData.map(
           (sheetData: ISheetData) => {
-            //console.log(sheetData);
             const id: string = sheetData.values[0].formattedValue;
-            const enItemData: string = sheetData.values[1].formattedValue;
-            const zhItemData: string = sheetData.values[2].formattedValue;
-            const exampleData: string = sheetData.values[3]?.formattedValue ?? '';
+            const tag: string = sheetData.values[1].formattedValue;
+            const enItemData: string = sheetData.values[2].formattedValue;
+            const zhItemData: string = sheetData.values[3].formattedValue;
+            const exampleData: string = sheetData.values[4]?.formattedValue ?? '';
             const alphabet: string = enItemData.slice(0, 1).toLowerCase();
 
             const _parts: string[] = zhItemData.match(/【[a-z]{1,}】/g) ?? [];
@@ -33,6 +33,7 @@ const makeApiCall = (sheetId: string) => {
 
             return {
               id,
+              tag,
               alphabet,
               parts,
               en: enItemData,
@@ -40,10 +41,10 @@ const makeApiCall = (sheetId: string) => {
                 const name: string[] = itemText.split('$');
                 return `${name[0]}`;
               }),
-              example: exampleData.split('%').map((itemText) => {
+              example: exampleData ? exampleData.split('%').map((itemText) => {
                 const name: string[] = itemText.split('$');
                 return `${name[0]}`.replace(/\n/g, '');
-              }),
+              }) : [],
             };
           }
         );

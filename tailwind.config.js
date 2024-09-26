@@ -32,6 +32,7 @@ module.exports = {
       'yellow-light': '#fcf8e3',
       'yellow-dark': '#ffc107',
       red: '#f87171',
+      cyan: '#93C5FA',
     },
     fontSize: {
       xl: '32px',

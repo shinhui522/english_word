@@ -11,6 +11,7 @@ import { RootState } from '@/Store/index';
 
 const useSetDailyCase = () => {
   const WORDS_DATA = useSelector((state: RootState) => state.collection.words);
+  console.log(WORDS_DATA);
 
   return useCallback(
     (dateId: string, localData: IDailyCase | undefined): IDailyCase => {
@@ -22,6 +23,7 @@ const useSetDailyCase = () => {
           JSON.stringify(localData)
         );
         const wordsNumberToSet: Set<string> = new Set(words);
+        console.log(localData);
 
         if (date === dateId && wordsNumberToSet.size === 10) {
           const cleanedWords: string[] = [...wordsNumberToSet];
@@ -39,8 +41,32 @@ const useSetDailyCase = () => {
       }
 
       if (hasLocalData === false) {
-        const randoms: number[] = randomCollection(10, WORDS_DATA.length);
-        result.words = randoms.map((num: number) => WORDS_DATA[num].id);
+        console.log("false");
+        //const randoms: number[] = randomCollection(10, WORDS_DATA.length);
+        //result.words = randoms.map((num: number) => WORDS_DATA[num].id);
+
+        const startDay = new Date('2024-09-27'); // 設定固定的開始日期
+        const currentDate = new Date(dateId);
+        const diffTime = currentDate.getTime() - startDay.getTime(); // 計算時間差
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // 將時間差轉換為天數
+        const totalWords = WORDS_DATA.length;
+        const startIndex = (diffDays * 10) % totalWords; // 計算起始索引並處理超出範圍
+        const endIndex = (startIndex + 10) % totalWords; // 計算結束索引並處理超出範圍
+  
+        if (totalWords > 0) {
+          if (endIndex > startIndex) {
+            // 確保在不需要從頭開始的情況下
+            const wordsSlice = WORDS_DATA.slice(startIndex, endIndex);
+            result.words = wordsSlice.map(word => word.id);
+          } else {
+            // 處理從頭開始的情況
+            const wordsSlice = [
+              ...WORDS_DATA.slice(startIndex),
+              ...WORDS_DATA.slice(0, endIndex)
+            ];
+            result.words = wordsSlice.map(word => word.id);
+          }
+        }
       }
 
       return result;

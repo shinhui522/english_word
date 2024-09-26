@@ -1,0 +1,15 @@
+{
+  "/404": "pages/404.html",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/api/hello": "pages/api/hello.js",
+  "/collection": "pages/collection.html",
+  "/error": "pages/error.html",
+  "/favorite": "pages/favorite.html",
+  "/": "pages/index.html",
+  "/info": "pages/info.html",
+  "/quiz": "pages/quiz.html",
+  "/quiz/[id]": "pages/quiz/[id].html",
+  "/record": "pages/record.html",
+  "/_error": "pages/_error.js"
+}

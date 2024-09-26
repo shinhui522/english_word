@@ -1,5 +1,6 @@
 interface IWordItem {
   id: string;
+  tag: string;
   en: string;
   zh: string[];
   parts: string[];
